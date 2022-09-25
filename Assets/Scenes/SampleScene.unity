@@ -714,7 +714,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.004022354, y: -0.0000000011468817, z: -4.613201e-12, w: 0.99999195}
+  m_LocalRotation: {x: -0.004022354, y: -1.8944833e-10, z: -7.6203415e-13, w: 0.99999195}
   m_LocalPosition: {x: 0, y: 2, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -845,6 +845,7 @@ GameObject:
   - component: {fileID: 1338521961}
   - component: {fileID: 1338521962}
   - component: {fileID: 1338521963}
+  - component: {fileID: 1338521964}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -899,6 +900,14 @@ MonoBehaviour:
       m_Type: 1
       m_ExpectedControlType: Button
       m_Id: e2624307-9a12-44ec-9546-11cf309458a6
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: SpecialSheath
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 1c8d4b92-a919-4ce9-9527-f014c0b8d802
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -992,10 +1001,35 @@ MonoBehaviour:
       m_Groups: 
       m_Action: SpiritAttack
       m_Flags: 0
+    - m_Name: One Modifier
+      m_Id: 556d1235-27ce-4873-ac7c-66e0af928b99
+      m_Path: OneModifier
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: SpecialSheath
+      m_Flags: 4
+    - m_Name: modifier
+      m_Id: 096aaeef-1491-4fcc-a04f-136adef60f8b
+      m_Path: <Gamepad>/rightTrigger
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: SpecialSheath
+      m_Flags: 8
+    - m_Name: binding
+      m_Id: 01282020-5ee1-438a-a330-a5d5896a6d72
+      m_Path: <Gamepad>/buttonSouth
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: SpecialSheath
+      m_Flags: 8
   m_goCamera: {fileID: 1386628361}
   m_goOrientation: {fileID: 320816651}
   m_cAnimator: {fileID: 1861885798}
   m_fMoveSpeed: 5
+  m_bCanMove: 1
 --- !u!143 &1338521963
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1014,6 +1048,20 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &1338521964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338521960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 543b5ab27de2e914694cc6ac6807491e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_fSpeed: 8
+  m_bIsForcing: 0
 --- !u!1 &1386628359
 GameObject:
   m_ObjectHideFlags: 0
@@ -1366,7 +1414,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1775209744}
-  m_LocalRotation: {x: 0.09252102, y: 0.000000017659854, z: -0.0000000016409462, w: 0.99571073}
+  m_LocalRotation: {x: 0.09252102, y: -0.00000001765986, z: 0.0000000016409466, w: 0.99571073}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1576,7 +1624,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2051768943}
-  m_LocalRotation: {x: -0.004022357, y: -6.693201e-10, z: -2.6922661e-12, w: 0.99999195}
+  m_LocalRotation: {x: -0.004022356, y: -1.894483e-10, z: -7.6203497e-13, w: 0.99999195}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

@@ -14,7 +14,6 @@ public class PlayerInput : MonoBehaviour {
     private Vector2 m_vMoveInput;
 
     public float m_fMoveSpeed;
-    public bool m_bIsSpiritAttackInputPerformed = false;
     public bool m_bCanMove = true;
 
     void Start() {
@@ -26,6 +25,7 @@ public class PlayerInput : MonoBehaviour {
         m_cInputs["Move"].performed += ctx => m_vMoveInput = ctx.ReadValue<Vector2>();
         m_cInputs["Move"].canceled += ctx => m_vMoveInput = Vector2.zero;
         m_cInputs["SpiritAttack"].performed += ctx => m_cAnimator.SetTrigger("SpiritAttack");
+        m_cInputs["SpecialSheath"].performed += ctx => m_cAnimator.SetTrigger("SpecialSheath");
     }
 
     void Update() {
