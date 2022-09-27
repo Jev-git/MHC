@@ -1,26 +1,25 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerIdleBehaviour : PlayerBehaviour {
-    public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+public class PlayerBehaviour_Roll : PlayerBehaviour {
+    // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         base.OnStateEnter(animator, stateInfo, layerIndex);
-        m_cInput.m_bCanMove = true;
+        m_cForcedMovement.m_bIsRolling = true;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-    //    if (m_cInput.m_bIsSpiritAttackInputPerformed) {
-    //        m_cInput.m_bIsSpiritAttackInputPerformed = false;
-    //        animator.SetTrigger("SpiritAttack");
-    //        m_cInput.m_bCanMove = false;
-    //    }
+    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+    //    
     //}
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-    //}
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        base.OnStateExit(animator, stateInfo, layerIndex);
+        m_cForcedMovement.m_bIsRolling = false;
+    }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

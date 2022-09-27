@@ -26,6 +26,9 @@ public class PlayerInput : MonoBehaviour {
         m_cInputs["Move"].canceled += ctx => m_vMoveInput = Vector2.zero;
         m_cInputs["SpiritAttack"].performed += ctx => m_cAnimator.SetTrigger("SpiritAttack");
         m_cInputs["SpecialSheath"].performed += ctx => m_cAnimator.SetTrigger("SpecialSheath");
+        m_cInputs["Roll"].performed += ctx => m_cAnimator.SetTrigger("Roll");
+        m_cInputs["X"].performed += ctx => m_cAnimator.SetTrigger("X");
+        m_cInputs["A"].performed += ctx => m_cAnimator.SetTrigger("A");
     }
 
     void Update() {

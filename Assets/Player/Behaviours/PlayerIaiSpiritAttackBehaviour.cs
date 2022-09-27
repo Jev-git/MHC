@@ -3,15 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerIaiSpiritAttackBehaviour : PlayerBehaviour {
-    private PlayerForcedMovement m_cForcedMovement;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateinfo, int layerindex) {
         base.OnStateEnter(animator, stateinfo, layerindex);
-        if (!m_cForcedMovement) {
-            m_cForcedMovement = animator.gameObject.transform.parent.gameObject.GetComponent<PlayerForcedMovement>();
-        }
-        m_cForcedMovement.m_bIsForcing = true;
+        m_cForcedMovement.m_bIsForcingIaiSpiritAttack = true;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -22,7 +18,9 @@ public class PlayerIaiSpiritAttackBehaviour : PlayerBehaviour {
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        m_cForcedMovement.m_bIsForcing = false;
+        base.OnStateExit(animator, stateInfo, layerIndex);
+        m_cForcedMovement.m_bIsForcingIaiSpiritAttack = false;
+        m_cInvincible.DeactivateInvincibility();
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
